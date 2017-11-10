@@ -93,12 +93,15 @@ a {
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
 
   @include large {
+      padding-bottom: 1rem;
   }
 
   @include medium {
+      padding-bottom: 1rem;
   }
 
   @include small {
+    padding-bottom: 1rem;
   }
 }
 
