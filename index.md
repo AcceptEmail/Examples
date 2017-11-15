@@ -11,3 +11,8 @@ For technical support regarding our integrations, please contact [support@accept
 # [](#header-1)REST API
 
 The documentation for the API can be found here: [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Get](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Get)
+
+
+# [](#header-1)SOAP API
+
+We also have a SOAP API available. To obtain the Integration Guide for the SOAP API, please contact us at [support@acceptemail.com](mailto:support@acceptemail.com)
