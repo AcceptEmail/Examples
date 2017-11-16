@@ -6,4 +6,5 @@ https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Get
 If you have any questions please contact support@acceptemail.com
 
 Integration guide to be published here.
+
 https://acceptemail.github.io/Examples/
