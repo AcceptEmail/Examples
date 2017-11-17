@@ -15,7 +15,9 @@ The documentation for the API can be found here: [https://api.acceptemail.com/sw
 # [](#header-1)Obtaining the API Keys
 
 In order to start developing with our REST API, you will need an API key
+
 Log into the application and select Settings under the Account menu-tab (your account needs Admin or Settings-rights to access this).
+
 At the REST API Keys Settings, enter a name and keys (or let the app generate the keys)
 ![REST](assets/GenerateRestKey.gif)
 
