@@ -244,4 +244,4 @@ In version one, POST Bill returned a response with the HTTP code 201 (Created), 
 <a id="soap-api"></a>
 # [SOAP API](#soap-api)
 
-We also have a SOAP API available. To obtain the Integration Guide for the SOAP API, please contact us at [support@acceptemail.com](mailto:support@acceptemail.com)
+We also have a SOAP API available. To obtain the Integration Guide for the SOAP API, please contact us at [support@accepteasy.com](mailto:support@accepteasy.com)
