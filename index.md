@@ -2,18 +2,27 @@
 layout: default
 ---
 
-AcceptEasy is a cloudbased service that enables online, mobile and social payments, mandates and verifications. This page details the integration with our Rest API.
+AcceptEasy is a cloudbased service that enables online, mobile and social payments, mandates and verifications. This page details the integration with our REST API.
+
+
+# [REST API](#rest-api)
+## [Obtaining the API Keys](#obtaining-api-keys)
+## [Migration from v1 to v2](#migration-v1-to-v2)
+### [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
+### [EmailData to RecordData](#emaildata-to-recorddata)
+# [SOAP API](#soap-api)
 
 For more information regarding our services, check our website: [http://www.accepteasy.com](http://www.accepteasy.com)
 
 For technical support regarding our integrations, please contact [support@acceptemail.com](mailto:support@acceptemail.com)
 
-# REST API
+<a id="rest-api"></a>
+# [REST API](#rest-api)
 
 The documentation for the API can be found here: [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Get](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Get)
 
 <a id="obtaining-api-keys"></a>
-## Obtaining the API Keys
+## [Obtaining the API Keys](#obtaining-api-keys)
 
 In order to start developing with our REST API, you will need an API key
 
@@ -23,13 +32,13 @@ At the REST API Keys Settings, enter a name and keys (or let the app generate th
 ![REST](assets/GenerateRestKey.gif)
 
 <a id="migration-v1-to-v2"></a>
-## Migration from v1 to v2
+## [Migration from v1 to v2](#migration-v1-to-v2)
 
 The main difference between v1 and v2 of our REST API are that you can now opt for [synchronous sending instead of asynchronous sending](#synchronous-vs-asynchronous), and additional data is now set as [RecordData using a standard JSON object instead of as EmailData using key-value pairs](#emaildata-to-recorddata).
 
 
 <a id="synchronous-vs-asynchronous"></a>
-### Synchronous vs Asynchronous
+### [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
 
 #### bulk sending
 
@@ -40,7 +49,7 @@ If you are using our API for bulk sending of emails or text messages, the asynch
 If you are using our transactions in chats, chatbots, or to redirect users from your portal to our transaction page, it might be more convenient to use our synchronous POST Bill. You can use the same request as /v1/Bill but POST it to /v2/Bill. In this case, instead of just getting the ATID in the response, the response will contain everything you would use GET Bill to get in the asynchronous situation.
 
 <a id="emaildata-to-recorddata"></a>
-### EmailData to RecordData
+### [EmailData to RecordData](#emaildata-to-recorddata)
 
 Instead of using key-value pairs like EmailData in v1, RecordData uses a standard JSON Object. If you are using EmailData in v1, you will have to rename to RecordData and restructure the way the attributes are sent. So:
 
@@ -70,6 +79,8 @@ Will have to change to:
 ]
 ```
 
-# SOAP API
+
+<a id="soap-api"></a>
+# [SOAP API](#soap-api)
 
 We also have a SOAP API available. To obtain the Integration Guide for the SOAP API, please contact us at [support@acceptemail.com](mailto:support@acceptemail.com)
