@@ -9,11 +9,15 @@ AcceptEasy is a cloudbased service that enables online, mobile and social paymen
 # [Table of Contents](#table-of-contents)
 1. [REST API](#rest-api)
 2. [Obtaining the API Keys](#obtaining-api-keys)
-3. [Migration from v1 to v2](#migration-v1-to-v2)
+3. [Use cases](#use-cases)
+	1. [Create link for use inline, chat or portal](#inline-chat-portal)
+	2. [Bulk sending of Bills through email, text or both](#bulk-sending)
+	3. [Receiving webhooks](#receive-webhooks)
+4. [Migration from v1 to v2](#migration-v1-to-v2)
 	1. [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
 	2. [EmailData to RecordData](#emaildata-to-recorddata)
 	3. [Changed HTTP status code](#changed-status-code)
-4. [SOAP API](#soap-api)
+5. [SOAP API](#soap-api)
 
 For more information regarding our services, check our website: [http://www.accepteasy.com](http://www.accepteasy.com)
 
@@ -33,6 +37,121 @@ Log into the application and select Settings under the Account menu-tab (your ac
 
 At the REST API Keys Settings, enter a name and keys (or let the app generate the keys)
 ![REST](assets/GenerateRestKey.gif)
+
+<a id="use-cases"></a>
+## [Use cases](#use-cases)
+
+<a id="inline-chat-portal"></a>
+### [Create link for use inline, chat or portal](#inline-chat-portal)
+When using AcceptEmail transactions in chat (for agents or chatbots), or when forwarding users to our transaction pages from your portal, only minimal information needs to be sent to our API. It is easiest to use the synchronous version of POST Bill, so that you know the transaction page is available the same instant you get the response.
+
+For instance, to create a transaction for a payment of 12,99 the following JSON object can be POSTed to /v2/Bill:
+```
+{
+  "PaymentReference": "123456",
+  "Description": "Payment from Chat",
+  "Amount": 1299,
+  "ExpiryDate": "2018-04-01T09:00:00Z",
+}
+```
+
+From the response, you can use the ShortURL of the full TransactionURL:
+
+```
+{
+  "ATID": "120b6125-fdfa-4124-a08c-dbf63f38e162",
+  "SRRID": "r180205114728321",
+  "AETemplateID": "4a5c25a1-787a-439c-9089-2b78914be777",
+  "PaymentReference": "123456",
+  "Amount": 12.99,
+  "Description": "Payment from Chat",
+  "ExpiryDate": "2018-04-01T09:00:00Z",
+  "Status": "Open",
+  "Address": {
+    "Email": "",
+    "PhoneNumber": ""
+  },
+  "Communication": [],
+  "Links": {
+    "TransactionURL": "https://transaction.acceptemail.com/Landing?id=120b6125-fdfa-4124-a08c-dbf63f38e162&detail=true",
+    "ShortURL": "http://trx.ae/JWELEvr9JEGgjNv2PzjhYg",
+    "Images": {
+      "ImageURL1": "https://images.acceptemail.com/?id=120b6125-fdfa-4124-a08c-dbf63f38e162&Culture=nl-NL&part=1",
+      "ImageURL2": "https://images.acceptemail.com/?id=120b6125-fdfa-4124-a08c-dbf63f38e162&Culture=nl-NL&part=2"
+    }
+  }
+}
+```
+
+<a id="bulk-sending"></a>
+### [Bulk sending of Bills through email, text or both](#bulk-sending)
+When sending AcceptEmail transactions through email, it can be useful to add some additional information to your calls, so that this data can be used in the email- or texttemplates. For instance, it's very common to provide a recipient salutation and address lines.
+
+When creating the transactions, it is possible to plan all future communications based on certain conditions. So I can choose to send the transaction through email rightaway, again through text a week later if it hasn't been paid yet, and finally a few days before expiry.
+
+And example that might be posted to /v2/Bill/async would be:
+```
+{
+  "PaymentReference": "123456",
+  "Description": "MonthlyInvoice",
+  "ExpiryDate": "2018-02-28T23:59:59Z",
+  "Address": {
+    "Email": "contact@accepteasy.com",
+    "PhoneNumber": "+31 20 261 00 20"
+  },
+  "Amount": 1299,
+  "Communication": [
+    {
+      "Channel": "Email",
+      "Template": "initialPaymentRequest",
+      "ScheduledDate": "2018-02-05T10:11:22Z",
+    },
+    {
+      "Channel": "Text",
+      "PaymentStatus": "Open",
+      "Template": "preminderText",
+      "ScheduledDate": "2018-02-12T15:11:22Z",
+    },
+    {
+      "Channel": "Email",
+      "PaymentStatus": "Open",
+      "Template": "finalPreminder",
+      "ScheduledDate": "2018-02-25T10:11:22Z",
+    },
+  ],
+  "RecordData": {
+    "RecipientDisplayName": "Arjan",
+    "RecipientAddressLine1": "Keizer Karelplein 5",
+    "RecipientAddressLine2": "1185 HL",
+    "RecipientAddressLine3": "Amstelveen",
+    "AccountNumber": "19282489"
+  }
+}
+```
+
+In response to this, you will receive just the ATID, that can be used with GET /v2/Bill/[ATID] to get updates to the status of the transaction.
+
+
+<a id="receive-webhooks"></a>
+### [Receiving webhooks](#receive-webhooks)
+
+Webhooks can be used to realtime feedback on the status of AcceptEmail transactions. Some examples of possible webhooks:
+Bounce: 
+```{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"Bounced","ERROR":null}```
+
+Creation success: 
+```{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"CreationSucceded","ERROR":null}```
+
+Creation error: 
+```{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"CreationFailed","ERROR":"APP0225 - Expiry date cannot exceed 1 year from now."}```
+
+Payment made: 
+```{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"Paid","ERROR":null}```
+
+These webhooks will be sent to a HTTPS endpoint that can be set in your account. 
+
+Upon receiving a webhook, for instance, for payment, you can use GET /v2/Bill/[ATID], to fetch additional information such as the accountholder name, or accountnumber for the account that completed the payment.
+
 
 <a id="migration-v1-to-v2"></a>
 ## [Migration from v1 to v2](#migration-v1-to-v2)
