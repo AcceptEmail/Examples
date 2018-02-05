@@ -26,7 +26,7 @@ For technical support regarding our integrations, please contact [support@accept
 <a id="rest-api"></a>
 # [Documentation](#rest-api)
 
-The Swagger documentation for the API can be found here: [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Get](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post)
+The Swagger documentation for the API can be found here: [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post)
 [![SwaggerDocs](/assets/SwaggerLogo.png)](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post)
 
 <a id="obtaining-api-keys"></a>
