@@ -37,7 +37,7 @@ At the REST API Keys Settings, enter a name and keys (or let the app generate th
 <a id="migration-v1-to-v2"></a>
 ## [Migration from v1 to v2](#migration-v1-to-v2)
 
-The main difference between v1 and v2 of our REST API are that you can now opt for [synchronous sending instead of asynchronous sending](#synchronous-vs-asynchronous), and additional data is now set as [RecordData using a standard JSON object instead of as EmailData using key-value pairs](#emaildata-to-recorddata). We also changed the HTTP status code for the response of Bill/async from 201 (Created) to 202 (Accepted).
+The main difference between v1 and v2 of our REST API are that you can now opt for [synchronous sending instead of asynchronous sending](#synchronous-vs-asynchronous), and additional data is now set as [RecordData using a standard JSON object instead of as EmailData using key-value pairs](#emaildata-to-recorddata). We also ]changed the HTTP status code](#changed-status-code) for the response of Bill/async from 201 (Created) to 202 (Accepted).
 
 
 <a id="synchronous-vs-asynchronous"></a>
