@@ -5,12 +5,14 @@ layout: default
 AcceptEasy is a cloudbased service that enables online, mobile and social payments, mandates and verifications. This page details the integration with our REST API.
 
 
-# [REST API](#rest-api)
-## [Obtaining the API Keys](#obtaining-api-keys)
-## [Migration from v1 to v2](#migration-v1-to-v2)
-### [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
-### [EmailData to RecordData](#emaildata-to-recorddata)
-# [SOAP API](#soap-api)
+<a id="table-of-contents"></a>
+# [Table of Contents](#table-of-contents)
+1. [REST API](#rest-api)
+2. [Obtaining the API Keys](#obtaining-api-keys)
+3. [Migration from v1 to v2](#migration-v1-to-v2)
+	1. [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
+	2. [EmailData to RecordData](#emaildata-to-recorddata)
+4. [SOAP API](#soap-api)
 
 For more information regarding our services, check our website: [http://www.accepteasy.com](http://www.accepteasy.com)
 
