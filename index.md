@@ -139,22 +139,46 @@ Webhooks can be used to realtime feedback on the status of AcceptEmail transacti
 
 Bounce: 
 ```
-{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"Bounced","ERROR":null}
+{
+  "ATID": "120b6125-fdfa-4124-a08c-dbf63f38e162",
+  "ERROR": null,
+  "PaymentReference": "123456",
+  "SRRID": "r180205114728321",
+  "STATUS": "Bounced"
+}
 ```
 
 Creation success: 
 ```
-{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"CreationSucceded","ERROR":null}
+{
+  "ATID": "120b6125-fdfa-4124-a08c-dbf63f38e162",
+  "ERROR": null,
+  "PaymentReference": "123456",
+  "SRRID": "r180205114728321",
+  "STATUS": "CreationSucceded"
+}
 ```
 
 Creation error: 
 ```
-{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"CreationFailed","ERROR":"APP0225 - Expiry date cannot exceed 1 year from now."}
+{
+  "ATID": "120b6125-fdfa-4124-a08c-dbf63f38e162",
+  "ERROR": "APP0225 - Expiry date cannot exceed 1 year from now.",
+  "PaymentReference": "123456",
+  "SRRID": "r180205114728321",
+  "STATUS": "CreationFailed"
+}
 ```
 
 Payment made: 
 ```
-{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"Paid","ERROR":null}
+{
+  "ATID": "120b6125-fdfa-4124-a08c-dbf63f38e162",
+  "ERROR": null,
+  "PaymentReference": "123456",
+  "SRRID": "r180205114728321",
+  "STATUS": "Paid"
+}
 ```
 
 These webhooks will be sent to a HTTPS endpoint that can be set in your account. 
