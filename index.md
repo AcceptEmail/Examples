@@ -21,7 +21,7 @@ Log into the application and select Settings under the Account menu-tab (your ac
 At the REST API Keys Settings, enter a name and keys (or let the app generate the keys)
 ![REST](assets/GenerateRestKey.gif)
 
-## [Migration from v1 to v2](#migration-v1-to-v2)
+## [Migration from v1 to v2](#migration-v1-to-v2)<a id="migration-v1-to-v2"></a>
 
 The main difference between v1 and v2 of our REST API are that you can now opt for synchronous sending instead of asynchronous sending, and additional data is now set using a standard JSON object instead of through key-value pairs.
 
