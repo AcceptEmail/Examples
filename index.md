@@ -12,6 +12,7 @@ AcceptEasy is a cloudbased service that enables online, mobile and social paymen
 3. [Migration from v1 to v2](#migration-v1-to-v2)
 	1. [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
 	2. [EmailData to RecordData](#emaildata-to-recorddata)
+	3. [Changed HTTP status code](#changed-status-code)
 4. [SOAP API](#soap-api)
 
 For more information regarding our services, check our website: [http://www.accepteasy.com](http://www.accepteasy.com)
@@ -36,7 +37,7 @@ At the REST API Keys Settings, enter a name and keys (or let the app generate th
 <a id="migration-v1-to-v2"></a>
 ## [Migration from v1 to v2](#migration-v1-to-v2)
 
-The main difference between v1 and v2 of our REST API are that you can now opt for [synchronous sending instead of asynchronous sending](#synchronous-vs-asynchronous), and additional data is now set as [RecordData using a standard JSON object instead of as EmailData using key-value pairs](#emaildata-to-recorddata).
+The main difference between v1 and v2 of our REST API are that you can now opt for [synchronous sending instead of asynchronous sending](#synchronous-vs-asynchronous), and additional data is now set as [RecordData using a standard JSON object instead of as EmailData using key-value pairs](#emaildata-to-recorddata). We also changed the HTTP status code for the response of Bill/async from 201 (Created) to 202 (Accepted).
 
 
 <a id="synchronous-vs-asynchronous"></a>
@@ -81,6 +82,11 @@ Will have to change to:
 ]
 ```
 
+
+<a id="changed-status-code"></a>
+### [Changed HTTP status code](#changed-status-code)
+
+In version one, POST Bill returned a response with the HTTP code 201 (Created), but since the call is asynchronous, using the code 202 (Accepted) makes more sense. In version 2 we made sure to use 202 (Accepted) for POST /v2/Bill/async and 201 (Created) for POST /v2/Bill.
 
 <a id="soap-api"></a>
 # [SOAP API](#soap-api)
