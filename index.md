@@ -7,7 +7,7 @@ AcceptEasy is a cloudbased service that enables online, mobile and social paymen
 
 <a id="table-of-contents"></a>
 # [Table of Contents](#table-of-contents)
-1. [REST API](#rest-api)
+1. [Documentation](#rest-api)
 2. [Obtaining the API Keys](#obtaining-api-keys)
 3. [Use cases](#use-cases)
 	1. [Create link for use inline, chat or portal](#inline-chat-portal)
@@ -24,9 +24,10 @@ For more information regarding our services, check our website: [http://www.acce
 For technical support regarding our integrations, please contact [support@acceptemail.com](mailto:support@acceptemail.com)
 
 <a id="rest-api"></a>
-# [REST API](#rest-api)
+# [Documentation](#rest-api)
 
-The documentation for the API can be found here: [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Get](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Get)
+The Swagger documentation for the API can be found here: [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Get](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Get)
+![SwaggerDocs](/assets/SwaggerLogo.png)
 
 <a id="obtaining-api-keys"></a>
 ## [Obtaining the API Keys](#obtaining-api-keys)
