@@ -136,17 +136,26 @@ In response to this, you will receive just the ATID, that can be used with GET /
 ### [Receiving webhooks](#receive-webhooks)
 
 Webhooks can be used to realtime feedback on the status of AcceptEmail transactions. Some examples of possible webhooks:
+
 Bounce: 
-```{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"Bounced","ERROR":null}```
+```
+{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"Bounced","ERROR":null}
+```
 
 Creation success: 
-```{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"CreationSucceded","ERROR":null}```
+```
+{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"CreationSucceded","ERROR":null}
+```
 
 Creation error: 
-```{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"CreationFailed","ERROR":"APP0225 - Expiry date cannot exceed 1 year from now."}```
+```
+{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"CreationFailed","ERROR":"APP0225 - Expiry date cannot exceed 1 year from now."}
+```
 
 Payment made: 
-```{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"Paid","ERROR":null}```
+```
+{"ATID":"120b6125-fdfa-4124-a08c-dbf63f38e162","SRRID":"r180205114728321","PaymentReference":"123456","STATUS":"Paid","ERROR":null}
+```
 
 These webhooks will be sent to a HTTPS endpoint that can be set in your account. 
 
