@@ -40,7 +40,8 @@ If you are using our transactions in chats, chatbots, or to redirect users from 
 Instead of using key-value pairs like EmailData in v1, RecordData uses a standard JSON Object. If you are using EmailData in v1, you will have to rename to RecordData and restructure the way the attributes are sent. So:
 
 ```
-"EmailData": [
+"EmailData": 
+[
     {
       "key": "key1",
       "value": "value1"
@@ -55,7 +56,8 @@ Instead of using key-value pairs like EmailData in v1, RecordData uses a standar
 Will have to change to:
 
 ```
-"RecordData": [
+"RecordData": 
+[
 	{
 	  "key1": "value1",
 	  "key2": "value2"
