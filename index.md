@@ -38,6 +38,7 @@ Log into the application and select Settings under the Account menu-tab (your ac
 
 At the REST API Keys Settings, enter a name and keys (or let the app generate the keys)
 ![REST](assets/GenerateRestKey.gif)
+To test the keys, you can use them to log in on the top right corner of the Swagger documentation: : [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post)
 
 <a id="use-cases"></a>
 ## [Use cases](#use-cases)
