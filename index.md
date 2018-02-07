@@ -88,9 +88,9 @@ From the response, you can use the ShortURL of the full TransactionURL:
 ### [Bulk sending of Bills through email, text or both](#bulk-sending)
 When sending AcceptEmail transactions through email, it can be useful to add some additional information to your calls, so that this data can be used in the email- or texttemplates. For instance, it's very common to provide a recipient salutation and address lines.
 
-When creating the transactions, it is possible to plan all future communications based on certain conditions. So I can choose to send the transaction through email rightaway, again through text a week later if it hasn't been paid yet, and finally a few days before expiry.
+When creating the transactions, it is possible to plan all future communications based on certain conditions. So you can choose to send the transaction through email rightaway, again through text a week later if it hasn't been paid yet, and finally a few days before expiry.
 
-And example that might be posted to /v2/Bill/async would be:
+An example that might be posted to /v2/Bill/async would be:
 ```
 {
   "PaymentReference": "123456",
@@ -136,7 +136,7 @@ In response to this, you will receive just the ATID, that can be used with GET /
 <a id="receive-webhooks"></a>
 ### [Receiving webhooks](#receive-webhooks)
 
-Webhooks can be used to realtime feedback on the status of AcceptEmail transactions. Some examples of possible webhooks:
+Webhooks can be used to get realtime feedback on the status of AcceptEmail transactions. Some examples of our webhooks:
 
 Bounce: 
 ```
@@ -190,19 +190,19 @@ Upon receiving a webhook, for instance, for payment, you can use GET /v2/Bill/[A
 <a id="migration-v1-to-v2"></a>
 ## [Migration from v1 to v2](#migration-v1-to-v2)
 
-The main difference between v1 and v2 of our REST API are that you can now opt for [synchronous sending instead of asynchronous sending](#synchronous-vs-asynchronous), and additional data is now set as [RecordData using a standard JSON object instead of as EmailData using key-value pairs](#emaildata-to-recorddata). We also ]changed the HTTP status code](#changed-status-code) for the response of Bill/async from 201 (Created) to 202 (Accepted).
+The main difference between v1 and v2 of our REST API are that you can now opt for [synchronous sending instead of asynchronous sending](#synchronous-vs-asynchronous), and additional data is now set as [RecordData using a standard JSON object instead of as EmailData using key-value pairs](#emaildata-to-recorddata). We also [changed the HTTP status code](#changed-status-code) for the response of Bill/async from 201 (Created) to 202 (Accepted).
 
 
 <a id="synchronous-vs-asynchronous"></a>
 ### [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
 
-#### bulk sending
+#### Bulk sending
 
 If you are using our API for bulk sending of emails or text messages, the asynchronous option would still be the most efficient way of sending. You can keep using the asynchrous option by changing your POST endpoint from /v1/Bill to /v2/Bill/async .
 
-#### inline use, chat & portals
+#### Inline use, chat & portals
 
-If you are using our transactions in chats, chatbots, or to redirect users from your portal to our transaction page, it might be more convenient to use our synchronous POST Bill. You can use the same request as /v1/Bill but POST it to /v2/Bill. In this case, instead of just getting the ATID in the response, the response will contain everything you would use GET Bill to get in the asynchronous situation.
+If you are using our transactions in chats, chatbots, or to redirect users from your portal to our transaction page, it might be more convenient to use our synchronous POST Bill. You can use the same request as /v1/Bill but POST it to /v2/Bill. In this case, instead of just getting the ATID in the response, the response will contain everything you would use GET Bill to get in the asynchronous situation. Keep in mind that the synchronous option will take longer to respond than the asynchronous call.
 
 <a id="emaildata-to-recorddata"></a>
 ### [EmailData to RecordData](#emaildata-to-recorddata)
