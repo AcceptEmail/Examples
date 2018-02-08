@@ -38,6 +38,9 @@ Log into the application and select Settings under the Account menu-tab (your ac
 
 At the REST API Keys Settings, enter a name and keys (or let the app generate the keys)
 ![REST](assets/GenerateRestKey.gif)
+Both keys will work for authentication, and you can renew them one by one. This enables you to rotate the keys without downtime if you want to change them. You can use the secondary key as you renew the primary.
+
+
 To test the keys, you can use them to log in on the top right corner of the Swagger documentation: : [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post)
 
 <a id="use-cases"></a>
@@ -135,7 +138,7 @@ In response to this, you will receive just the ATID, that can be used with GET /
 
 
 <a id="receive-webhooks"></a>
-### [Receiving webhooks](#receive-webhooks)
+### [Receiving webhooks for bounces, asynchronous creation and payment status](#receive-webhooks)
 
 Webhooks can be used to get realtime feedback on the status of AcceptEmail transactions. Some examples of our webhooks:
 
@@ -184,6 +187,7 @@ Payment made:
 ```
 
 These webhooks will be sent to a HTTPS endpoint that can be set in your account. 
+![enabledWebhooks](assets/EnableWebhooks.mp4)
 
 Upon receiving a webhook, for instance, for payment, you can use GET /v2/Bill/[ATID], to fetch additional information such as the accountholder name, or accountnumber for the account that completed the payment.
 
