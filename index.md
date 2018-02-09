@@ -37,7 +37,7 @@ In order to start developing with our REST API, you will need an API key
 Log into the application and select Settings under the Account menu-tab (your account needs Admin or Settings-rights to access this).
 
 At the REST API Keys Settings, enter a name and keys (or let the app generate the keys)
-![REST](assets/GenerateRestKey.gif)
+<div class='embed-container'><iframe src='https://player.vimeo.com/video/255000672' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
 Both keys will work for authentication, and you can renew them one by one. This enables you to rotate the keys without downtime if you want to change them. You can use the secondary key as you renew the primary.
 
