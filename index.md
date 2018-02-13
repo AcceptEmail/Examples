@@ -94,7 +94,7 @@ From the response, you can use the ShortURL of the full TransactionURL:
 ### [Bulk sending of Bills through email, text or both](#bulk-sending)
 When sending AcceptEmail transactions through email, it can be useful to add some additional information to your calls, so that this data can be used in the email- or text templates. For instance, it's very common to provide a recipient salutation and address lines.
 
-When creating the transactions, it is possible to plan all future communications based on certain conditions. So you can choose to send the transaction through email rightaway, again through text a week later if it hasn't been paid yet, and finally a few days before expiry.
+When creating the transactions, it is possible to plan all future communications based on certain conditions. So you can choose to send the transaction through email right away, again through text a week later if it hasn't been paid yet, and finally a few days before expiry.
 
 An example that might be posted to /v2/Bill/async would be:
 ```
