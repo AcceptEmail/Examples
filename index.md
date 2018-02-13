@@ -19,14 +19,14 @@ AcceptEasy is a cloudbased service that enables online, mobile and social paymen
 	3. [Changed HTTP status code](#changed-status-code)
 5. [SOAP API](#soap-api)
 
-For more information regarding our services, check our website: [http://www.accepteasy.com](http://www.accepteasy.com)
+For more information regarding our services, check our website: [https://www.accepteasy.com](https://www.accepteasy.com).
 
-For technical support regarding our integrations, please contact [support@acceptemail.com](mailto:support@acceptemail.com)
+For technical support regarding our integrations, please contact [support@acceptemail.com](mailto:support@acceptemail.com).
 
 <a id="rest-api"></a>
 # [Documentation](#rest-api)
 
-The Swagger documentation for the API can be found here: [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post)
+The Swagger documentation for the API can be found here: [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post).
 [![SwaggerDocs](/assets/SwaggerLogo.png)](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_Post)
 
 <a id="obtaining-api-keys"></a>
@@ -92,7 +92,7 @@ From the response, you can use the ShortURL of the full TransactionURL:
 
 <a id="bulk-sending"></a>
 ### [Bulk sending of Bills through email, text or both](#bulk-sending)
-When sending AcceptEmail transactions through email, it can be useful to add some additional information to your calls, so that this data can be used in the email- or texttemplates. For instance, it's very common to provide a recipient salutation and address lines.
+When sending AcceptEmail transactions through email, it can be useful to add some additional information to your calls, so that this data can be used in the email- or text templates. For instance, it's very common to provide a recipient salutation and address lines.
 
 When creating the transactions, it is possible to plan all future communications based on certain conditions. So you can choose to send the transaction through email rightaway, again through text a week later if it hasn't been paid yet, and finally a few days before expiry.
 
@@ -192,7 +192,7 @@ These webhooks will be sent to a HTTPS endpoint that can be set in your account.
 
 <div class='embed-container'><iframe src='https://player.vimeo.com/video/254997339' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-Upon receiving a webhook, for instance, for payment, you can use GET /v2/Bill/[ATID], to fetch additional information such as the accountholder name, or accountnumber for the account that completed the payment.
+Upon receiving a webhook, for instance, for payment, you can use GET /v2/Bill/[ATID], to fetch additional information such as the account holder name, or account number for the account that completed the payment.
 
 
 <a id="migration-v1-to-v2"></a>
