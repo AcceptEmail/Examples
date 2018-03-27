@@ -9,6 +9,7 @@ AcceptEasy is a cloudbased service that enables online, mobile and social paymen
 # [Table of Contents](#table-of-contents)
 1. [Documentation](#rest-api)
 2. [Obtaining the API Keys](#obtaining-api-keys)
+  1. [Rotating the API Keys](#rotating-api-keys)
 3. [Use cases](#use-cases)
 	1. [Create link for use inline, chat or portal](#inline-chat-portal)
 	2. [Bulk sending of Bills through email, text or both](#bulk-sending)
@@ -39,6 +40,9 @@ Log into the application and select Settings under the Account menu-tab (your ac
 At the REST API Keys Settings, enter a name and keys (or let the app generate the keys)
 <div class='embed-container'><iframe src='https://player.vimeo.com/video/255000672' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
+
+<a id="rotating-api-keys"></a>
+### [Rotating the API Keys](#obtaining-api-keys)
 Both keys will work for authentication, and you can renew them one by one. This enables you to rotate the keys without downtime if you want to change them. You can use the secondary key as you renew the primary.
 
 <div class='embed-container'><iframe src='https://player.vimeo.com/video/254999563' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
