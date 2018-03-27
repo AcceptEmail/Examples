@@ -9,7 +9,7 @@ AcceptEasy is a cloudbased service that enables online, mobile and social paymen
 # [Table of Contents](#table-of-contents)
 1. [Documentation](#rest-api)
 2. [Obtaining the API Keys](#obtaining-api-keys)
-  1. [Rotating the API Keys](#rotating-api-keys)
+	1. [Rotating the API Keys](#rotating-api-keys)
 3. [Use cases](#use-cases)
 	1. [Create link for use inline, chat or portal](#inline-chat-portal)
 	2. [Bulk sending of Bills through email, text or both](#bulk-sending)
