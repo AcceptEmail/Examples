@@ -166,7 +166,7 @@ Creation success:
   "ERROR": null,
   "PaymentReference": "123456",
   "SRRID": "r180205114728321",
-  "STATUS": "CreationSucceded"
+  "STATUS": "CreationSucceeded"
 }
 ```
 
