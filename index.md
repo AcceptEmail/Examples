@@ -238,7 +238,7 @@ To which the response might look like:
 }
 ```
 
-As you can see, the response is comprised of the search results in the Bills array, and some SearchMetaData. If the numnber of results exceeds the "count", and several pages of results exist, a query for the next page will be included in the SearchMetadata:
+As you can see, the response is comprised of the search results in the Bills array, and some SearchMetaData. If the number of results exceeds the "count", and several pages of results exist, a query for the next page will be included in the SearchMetadata:
 ```
 "SearchMetadata": {
     "CompletedIn": 0.054,
