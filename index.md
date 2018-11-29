@@ -264,7 +264,7 @@ The &paymentMethod=c7a8c460-e5e1-404e-a8c4-7fe5b27b48f2 tells the page which pay
 
 The &subPaymentMethod=INGBNL2A tells the page the subpaymentmethod (e.g. for iDeal, which bank).
 
-The id's of the paymentmethod and subpaymentmethod can be found through the [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_GetPaymentMethods](PaymentMethods) API call.
+The id's of the paymentmethod and subpaymentmethod can be found through the [PaymentMethods](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_GetPaymentMethods) API call.
 
 
 
