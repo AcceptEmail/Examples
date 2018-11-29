@@ -259,9 +259,12 @@ Here is an example of such a redirect URL:
 https://transaction.acceptemail.com/Landing?id=7f5f945f-1965-4acc-b4cf-8a36510c0ec6&detail=true&paymentMethod=c7a8c460-e5e1-404e-a8c4-7fe5b27b48f2&subPaymentMethod=INGBNL2A&redirect=true
 ```
 The &redirect=true tells the page to redirect the user to the payment provider.
+
 The &paymentMethod=c7a8c460-e5e1-404e-a8c4-7fe5b27b48f2 tells the page which payment provider.
+
 The &subPaymentMethod=INGBNL2A tells the page the subpaymentmethod (e.g. for iDeal, which bank).
-The id's of the paymentmethod and subpaymentmethod can be found through the PaymentMethods REST API call.
+
+The id's of the paymentmethod and subpaymentmethod can be found through the [https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_GetPaymentMethods](PaymentMethods) API call.
 
 
 
