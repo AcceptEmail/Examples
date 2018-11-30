@@ -344,6 +344,19 @@ The id's of the paymentmethod and subpaymentmethod can be found through the [Pay
 
 If an amountscheme (open or list) is used for the transaction, this can be passed by adding the amount in &amount=1500 where the amount is noted in cents.
 
+### Mandates
+
+Redirecting for mandates works in the same manner as bills. For the fields a user can fill in the mandate page, a number of arguments for the url are possible:
+
+&SequenceType= Oneff/Recurring (Identifies the underlying transaction sequence.)
+
+&CollectionAmount= Amount in cents (Fixed amount to be collected from the debtor’s account.)
+
+&MaximumAmount= Amount in cents (Maximum amount that can be collected from the debtor’s account.)
+
+&AmountType= Open/Fixed/Maximum (The type of the amount to be collected.)
+
+&ToDate= DateTime (The date until which the mandate is valid. Only for recurring.)
 
 
 <a id="migration-v1-to-v2"></a>
