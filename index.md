@@ -356,7 +356,7 @@ Redirecting for mandates works in the same manner as bills. For the fields a use
 
 &AmountType= Open/Fixed/Maximum (The type of the amount to be collected.)
 
-&ToDate= DateTime (The date until which the mandate is valid. Only for recurring.)
+&ToDate= DateTime (The date until which the mandate is valid. Only for recurring.) 
 
 
 <a id="migration-v1-to-v2"></a>
