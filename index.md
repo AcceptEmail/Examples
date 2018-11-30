@@ -17,6 +17,7 @@ AcceptEasy is a cloudbased service that enables online, mobile and social paymen
 	4. [Searching for bills previously sent to a client](#search-bills-client)
 	5. [Getting the payment methods for a bill](#getting-payment-methods)
 	6. [Redirect straight to payment provider](#redirecting)
+	7. [Redirecting after payment](#redirect-after-payment)
 4. [Migration from v1 to v2](#migration-v1-to-v2)
 	1. [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
 	2. [EmailData to RecordData](#emaildata-to-recorddata)
@@ -358,6 +359,19 @@ Redirecting for mandates works in the same manner as bills. For the fields a use
 
 &ToDate= DateTime (The date until which the mandate is valid. Only for recurring.) 
 
+<a id="redirect-after-payment"></a>
+## [Redirecting after payment](#redirect-after-payment)
+Once a user has made a payment at their paymentprovider, they'll be redirected to the AcceptEasy landing page. In some cases you might want to redirect the user to another page or app.
+
+To set this up. In the account, add a Result Banner, under the Templates menu. You can set links for both completed payments and unfinished (failed or cancelled) payments. After this, add the Result Banner to the AE Template and make sure to add the amount of seconds before the redirect should take place (enter 0 for immediate redirect).
+If you want each record to have unique redirect URL's, you can add this through the API by adding the following:
+```
+  "Extras":{
+  	"ReturnBannerOpenURL":"http://www.example.com",
+  	"ReturnBannerPaidURL":"http://www.example.com"
+  }
+```
+You can also add app-urls in both the Result banner and the record-specific URL's to be able to redirect a user to your mobile app.
 
 <a id="migration-v1-to-v2"></a>
 ## [Migration from v1 to v2](#migration-v1-to-v2)
