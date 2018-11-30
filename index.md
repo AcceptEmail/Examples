@@ -249,6 +249,80 @@ As you can see, the response is comprised of the search results in the Bills arr
   }
 ```
 
+<a id="getting-payment-methods"></a>
+### [Getting the payment methods for a bill](#getting-payment-methods)
+To get a list of all possible paymentmethods for a bill you can do the following call:
+```
+https://api.acceptemail.com/v2/Bill/7f5f945f-1965-4acc-b4cf-8a36510c0ec6/PaymentMethods
+```
+
+Which will return something like the following:
+```
+[
+    {
+        "PaymentLogo": "https://transaction.acceptemail.com/Content/Images/PayPal_30x26.png",
+        "PaymentMethodId": "8df82143-a825-4c46-a1f2-3da849760093",
+        "PaymentMethodName": "PayPal"
+    },
+    {
+        "PaymentLogo": "https://transaction.acceptemail.com/Content/Images/iDEAL_40x26.png",
+        "PaymentMethodId": "c7a8c460-e5e1-404e-a8c4-7fe5b27b48f2",
+        "PaymentMethodName": "iDEAL",
+        "SubPaymentMethods": [
+            {
+                "SubPaymentMethodId": "ABNANL2A",
+                "SubPaymentMethodName": "ABN AMRO"
+            },
+            {
+                "SubPaymentMethodId": "ASNBNL21",
+                "SubPaymentMethodName": "ASN Bank"
+            },
+            {
+                "SubPaymentMethodId": "BUNQNL2A",
+                "SubPaymentMethodName": "bunq"
+            },
+            {
+                "SubPaymentMethodId": "HANDNL2A",
+                "SubPaymentMethodName": "Handelsbanken"
+            },
+            {
+                "SubPaymentMethodId": "INGBNL2A",
+                "SubPaymentMethodName": "ING"
+            },
+            {
+                "SubPaymentMethodId": "KNABNL2H",
+                "SubPaymentMethodName": "Knab"
+            },
+            {
+                "SubPaymentMethodId": "MOYONL21",
+                "SubPaymentMethodName": "Moneyou"
+            },
+            {
+                "SubPaymentMethodId": "RABONL2U",
+                "SubPaymentMethodName": "Rabobank"
+            },
+            {
+                "SubPaymentMethodId": "RBRBNL21",
+                "SubPaymentMethodName": "RegioBank"
+            },
+            {
+                "SubPaymentMethodId": "SNSBNL2A",
+                "SubPaymentMethodName": "SNS"
+            },
+            {
+                "SubPaymentMethodId": "TRIONL2U",
+                "SubPaymentMethodName": "Triodos Bank"
+            },
+            {
+                "SubPaymentMethodId": "FVLBNL22",
+                "SubPaymentMethodName": "van Lanschot"
+            }
+        ]
+    }
+]
+```
+This example has two paymentmethods, iDeal and PayPal. For the iDeal paymethod, it also lists SubPaymentMethods, which are usually shown as a dropdown-selection on the landingpage.
+
 <a id="redirecting"></a>
 ## [Redirect straight to payment provider](#redirecting)
 
