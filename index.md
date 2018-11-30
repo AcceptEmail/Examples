@@ -15,6 +15,8 @@ AcceptEasy is a cloudbased service that enables online, mobile and social paymen
 	2. [Bulk sending of Bills through email, text or both](#bulk-sending)
 	3. [Receiving webhooks](#receive-webhooks)
 	4. [Searching for bills previously sent to a client](#search-bills-client)
+	5. [Getting the payment methods for a bill](#getting-payment-methods)
+	6. [Redirect straight to payment provider](#redirecting)
 4. [Migration from v1 to v2](#migration-v1-to-v2)
 	1. [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
 	2. [EmailData to RecordData](#emaildata-to-recorddata)
@@ -338,7 +340,9 @@ The &paymentMethod=c7a8c460-e5e1-404e-a8c4-7fe5b27b48f2 tells the page which pay
 
 The &subPaymentMethod=INGBNL2A tells the page the subpaymentmethod (e.g. for iDeal, which bank).
 
-The id's of the paymentmethod and subpaymentmethod can be found through the [PaymentMethods](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_GetPaymentMethods) API call.
+The id's of the paymentmethod and subpaymentmethod can be found through the [PaymentMethods](https://api.acceptemail.com/swagger/ui/index#!/Bill/Bill_GetPaymentMethods) API call. See also above.
+
+If an amountscheme (open or list) is used for the transaction, this can be passed by adding the amount in &amount=1500 where the amount is noted in cents.
 
 
 
