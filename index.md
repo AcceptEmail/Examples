@@ -14,7 +14,7 @@ AcceptEasy is a cloudbased service that enables online, mobile and social paymen
 	1. [Create link for use inline, chat or portal](#inline-chat-portal)
 	2. [Bulk sending of Bills through email, text or both](#bulk-sending)
 	3. [Receiving webhooks for bounces, asynchronous creation and payment status](#receive-webhooks)
-  4. [Realtime and robust payment status updates](#realtime-robust-paymentstatus)
+	4. [Realtime and robust payment status updates](#realtime-robust-paymentstatus)
 	5. [Searching for bills previously sent to a client](#search-bills-client)
 	6. [Getting the payment methods for a bill](#getting-payment-methods)
 	7. [Redirect straight to payment provider](#redirecting)
