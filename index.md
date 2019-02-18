@@ -13,11 +13,12 @@ AcceptEasy is a cloudbased service that enables online, mobile and social paymen
 3. [Use cases](#use-cases)
 	1. [Create link for use inline, chat or portal](#inline-chat-portal)
 	2. [Bulk sending of Bills through email, text or both](#bulk-sending)
-	3. [Receiving webhooks](#receive-webhooks)
-	4. [Searching for bills previously sent to a client](#search-bills-client)
-	5. [Getting the payment methods for a bill](#getting-payment-methods)
-	6. [Redirect straight to payment provider](#redirecting)
-	7. [Redirecting after payment](#redirect-after-payment)
+	3. [Receiving webhooks for bounces, asynchronous creation and payment status](#receive-webhooks)
+  4. [Realtime and robust payment status updates](#realtime-robust-paymentstatus)
+	5. [Searching for bills previously sent to a client](#search-bills-client)
+	6. [Getting the payment methods for a bill](#getting-payment-methods)
+	7. [Redirect straight to payment provider](#redirecting)
+	8. [Redirecting after payment](#redirect-after-payment)
 4. [Migration from v1 to v2](#migration-v1-to-v2)
 	1. [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
 	2. [EmailData to RecordData](#emaildata-to-recorddata)
@@ -184,7 +185,7 @@ Creation error:
   "STATUS": "CreationFailed"
 }
 ```
-
+<a id="receive-webhooks-payment"></a>
 Payment made: 
 ```
 {
@@ -201,6 +202,28 @@ These webhooks will be sent to a HTTPS endpoint that can be set in your account.
 <div class='embed-container'><iframe src='https://player.vimeo.com/video/254997339' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
 Upon receiving a webhook, for instance, for payment, you can use GET /v2/Bill/[ATID], to fetch additional information such as the account holder name, or account number for the account that completed the payment.
+
+<a id="realtime-robust-paymentstatus"></a>
+
+### [Realtime and robust payment status updates](#realtime-robust-paymentstatus)
+
+To receive realtime status updates about payments, we can push a webhook to a HTTPS endpoint, [the payment example can be found above](#receive-webhooks-payment).
+
+However, an endpoint can always temporarily become unavailable, so we advice a fallback to check the payment statusses. There are 3 main options for this:
+1. Matching the incoming funds on the bank account
+This is likely already happening, if you have an existing flow of funds. One thing to note is that this can take a few days, depending on how exactly this is setup.
+2. Poll GET Bill for outstanding payment
+This can be done every hour, every day, or using any other timeframe that is appropriate for the scenario. Depending on the number of concurrent outstanding bills, this can result in a high number of API calls, which is something to take into consideration when choosing the polling frequency.
+3. Use the Search/Payment API call (available from February 26 2019)
+Using the Search/Payment API call, for instance every hour, you will receive all payments made using a single API call. This would be our advised  way of making sure all payments are known in your systems. We would also suggest having some overlap in the time frame, if you are looking at payments of the last hour, to account for transactions that might have been outstanding during the turn of the hours. 
+An example of what that might look like:
+```
+https://api.acceptemail.com/v2/Search/Payment?paymentDateFrom=2019-01-15T09%3A00%3A00Z&paymentDateTo=2019-01-16T09%3A00%3A00Z&type=Bills
+```
+More information about the available attributes and the exact response can be found in the [SwaggerDocs](https://api-acp.acceptemail.com/swagger/ui/index#!/Search/Search_SearchPayment)
+
+
+
 
 <a id="search-bills-client"></a>
 ### [Searching for bills previously sent to a client](#search-bills-client)
