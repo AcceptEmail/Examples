@@ -405,6 +405,11 @@ https://transaction.acceptemail.com/Landing?id=7f5f945f-1965-4acc-b4cf-8a36510c0
 ```
 As a security measure, the url will be checked against a regular expression which will have to be set in the application under Settings (Dynamic Redirect - URL Validation Expression). If no regular expression is set or the url doesn't match the regular expression, the user won't be redirected to the dynamic url. (if a url is set in the record or template, that redirect will apply)
 
+Let's say your redirect will go to either https://www.example.com/id/1234567890 or /appurl/example/com/id?1234567890 the regex will look like this:
+```
+^(https:\/\/www.example.com\/id\/[0-9]{10})|(\/appurl\/example\/com\/id\?[0-9]{10})$
+```
+
 #### App urls
 You can also add app-urls in both the Result banner and the record-specific URL's to be able to redirect a user to your mobile app. This goes for all redirect-scenarios described above.
 
