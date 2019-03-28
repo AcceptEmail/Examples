@@ -392,10 +392,16 @@ To set this up. In the account, add a Result Banner, under the Templates menu. Y
 #### Custom redirect per record
 If you want each record to have unique redirect URL's, you can add this through the API by adding the following:
 ```
+{
+  "PaymentReference": "123456",
+  "Description": "Payment from Chat",
+  "Amount": 1299,
+  "ExpiryDate": "2020-04-01T09:00:00Z",
   "Extras":{
   	"ReturnBannerOpenURL":"http://www.example.com",
   	"ReturnBannerPaidURL":"http://www.example.com"
   }
+}
 ```
 
 #### Custom redirect through url parameters
