@@ -390,7 +390,7 @@ Once a user has made a payment at their paymentprovider, they'll be redirected t
 To set this up. In the account, add a Result Banner, under the Templates menu. You can set links for both completed payments and unfinished (failed or cancelled) payments. After this, add the Result Banner to the AE Template and make sure to add the amount of seconds before the redirect should take place (enter 0 for immediate redirect).
 
 #### Custom redirect per record
-If you want each record to have unique redirect URL's, you can add this through the API by adding the following:
+If you want each record to have unique redirect URL's, you can add this through the API by adding the Extras-object with the urls:
 ```
 {
   "PaymentReference": "123456",
