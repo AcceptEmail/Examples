@@ -205,7 +205,7 @@ Upon receiving a webhook, for instance, for payment, you can use GET /v2/Bill/[A
 
 ### [Retry mechanism for webhooks]
 
-For varying reasons (network problems, maintenance, etc.) a webhook may not be received by your system. For this scenario, there is a retry-mechanism. Our application will monitor the response from your system and retry sending the webhook with increasing time intervals (for a maximum of 10 retries, the first occuring after 15 minutes and the final attempt after 6 days).
+For varying reasons (network problems, maintenance, etc.) a webhook may not be received by your system. For this scenario, there is a retry-mechanism. Our application will monitor the response from your system and in case of a timeout or failure retry sending the webhook with increasing time intervals (for a maximum of 10 retries, the first occuring after 15 minutes and the final attempt after 6 days).
 You can also enter an email-address where you will be notified if the 1st retry fails. Another email will be sent once the 10th (and final) retry has failed. A maximum of 1 notification-email per day will be sent.
 
 The retry mechanism can be enabled in the settings-page, right below the REST API Notification URL. The email-address can also be filled here.
