@@ -1,4 +1,4 @@
 title: AcceptEasy
 description: [BETA] API description for AcceptEasy
 google_analytics:
-theme: jekyll-theme-cayman
+theme: pmarsceill/just-the-docs
