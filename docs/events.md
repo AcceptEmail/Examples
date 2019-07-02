@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Search
+title: Events
 nav_order: 7
 ---
 
