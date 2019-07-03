@@ -23,7 +23,6 @@ If you are using our API for bulk sending of emails or text messages, the asynch
 
 If you are using our transactions in chats, chatbots, or to redirect users from your portal to our transaction page, it might be more convenient to use our synchronous POST Bill. You can use the same request as /v1/Bill but POST it to /v2/Bill. In this case, instead of just getting the ATID in the response, the response will contain everything you would use GET Bill to get in the asynchronous situation. Keep in mind that the synchronous option will take longer to respond than the asynchronous call.
 
-<a id="emaildata-to-recorddata"></a>
 ## EmailData to RecordData
 
 Instead of using key-value pairs like EmailData in v1, RecordData uses a standard JSON Object. If you are using EmailData in v1, you will have to rename to RecordData and restructure the way the attributes are sent. So:
