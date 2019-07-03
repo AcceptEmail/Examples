@@ -9,7 +9,7 @@ nav_order: 5
 
 ### Realtime and robust payment status updates
 
-To receive realtime status updates about payments, we can push a webhook to a HTTPS endpoint, [the payment example can be found above](#receive-webhooks-payment).
+To receive realtime status updates about payments, we can push a webhook to a HTTPS endpoint.
 
 However, an endpoint can always temporarily become unavailable, so we advice a fallback to check the payment statusses. There are 3 main options for this:
 
