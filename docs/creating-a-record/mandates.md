@@ -17,7 +17,7 @@ When you want to send a mandate through email you will need to POST a JSON objec
   "Address": {
     "Email": "contact@accepteasy.com"
   },
-  "SequenceType": "OneOff",
+  "SequenceType": "Recurring",
   "ToDate": "2020-05-24T11:10:17.7245913Z",
   "AmountType": "Open",
   "MaximumAmount": 5400,
