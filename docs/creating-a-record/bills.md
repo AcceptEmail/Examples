@@ -21,6 +21,10 @@ For instance, to create a transaction for a payment of 12,99 the following JSON 
 }
 ```
 
+It is important to note that the PaymentReference field can be 36 characters, but most payment providers only allow a maximum of 16 characters, so we advice to keep it below that.
+
+The Description field has a maximum of 32 characters.
+
 From the response, you can use the ShortURL of the full TransactionURL:
 
 ```
