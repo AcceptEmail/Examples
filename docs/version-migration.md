@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Version migration
-nav_order: 9
+nav_order: 10
 ---
 
 # Version migration
