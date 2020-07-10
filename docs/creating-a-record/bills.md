@@ -101,7 +101,7 @@ An example that might be posted to /v2/Bill/ would be:
 ### Creating a large amount of bills
 
 For the creation of a large amount of records we have added an asynchronous option. The content of the call will be exactly the same as the synchronous version.
-In response to this, you will receive just the ATID. The record will then be put in a queue which will then be processed. Normally processing takes a few seconds.
+In response to this, you will receive just the ATID (or an error in case of a wrongly formatted request). The record will then be put in a queue which will then be processed. Normally processing takes a few seconds.
 
 To see the status of your asynchronous call you can make a GET request to /v2/Bill/[ATID]/status
 There are 3 possible results:
