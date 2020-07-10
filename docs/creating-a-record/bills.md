@@ -141,7 +141,6 @@ Error on creation
     "Message": "string"
   },
   "STATUS": "CreationFailed",
-  "Location": "string",
   "PaymentReference": "string",
   "SRRID": "string"
 }
