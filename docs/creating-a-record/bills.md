@@ -53,13 +53,12 @@ From the response, you can use the ShortURL of the full TransactionURL:
 }
 ```
 
-<a id="bulk-sending"></a>
-### Bulk sending of Bills through email, text or both
+### Sending of Bills through email, text or both
 When sending bills through email, it can be useful to add some additional information to your calls, so that this data can be used in the email- or text templates. For instance, it's very common to provide a recipient salutation and address lines.
 
 When creating the transactions, it is possible to plan all future communications based on certain conditions. So you can choose to send the transaction through email right away, again through text a week later if it hasn't been paid yet, and finally a few days before expiry.
 
-An example that might be posted to /v2/Bill/async would be:
+An example that might be posted to /v2/Bill/ would be:
 ```
 {
   "PaymentReference": "123456",
@@ -99,4 +98,56 @@ An example that might be posted to /v2/Bill/async would be:
 }
 ```
 
-In response to this, you will receive just the ATID, that can be used with GET /v2/Bill/[ATID] to get updates to the status of the transaction.
+### Creating a large amount of bills
+
+For the creation of a large amount of records we have added an asynchronous option. The content of the call will be exactly the same as the synchronous version.
+In response to this, you will receive just the ATID. The record will then be put in a queue which will then be processed. Normally processing takes a few seconds.
+
+To see the status of your asynchronous call you can make a GET request to /v2/Bill/[ATID]/status
+There are 3 possible results:
+
+<div class="code-example" markdown="1">
+Waiting to be processed
+</div>
+```
+{
+  "ATID": "00000000-0000-0000-0000-000000000000",
+  "STATUS": "Processing",
+  "PaymentReference": "string",
+  "SRRID": "string"
+}
+```
+
+<div class="code-example" markdown="1">
+Succesfully processed
+</div>
+```
+{
+  "ATID": "00000000-0000-0000-0000-000000000000",
+  "STATUS": "CreationSucceeded",
+  "Location": "string",
+  "PaymentReference": "string",
+  "SRRID": "string"
+}
+```
+
+<div class="code-example" markdown="1">
+Error on creation
+</div>
+```
+{
+  "ATID": "00000000-0000-0000-0000-000000000000",
+  "ERROR": {
+    "Message": "string"
+  },
+  "STATUS": "CreationFailed",
+  "Location": "string",
+  "PaymentReference": "string",
+  "SRRID": "string"
+}
+```
+
+It is also possible to receive a webhook when a record is created or caused an error. See [webhooks](/webhooks.md) for more information.
+
+
+
