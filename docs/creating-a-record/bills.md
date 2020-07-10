@@ -147,7 +147,7 @@ Error on creation
 }
 ```
 
-It is also possible to receive a webhook when a record is created or caused an error. See [webhooks](/webhooks.md) for more information.
+It is also possible to receive a webhook when a record is created or caused an error. See [webhooks](../webhooks.md) for more information.
 
 
 
